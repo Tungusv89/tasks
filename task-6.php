@@ -75,7 +75,7 @@
                                 "wrapbootstrap" => "sildur",
                                 "name" => "Roberto",
                                 "status" => true
-                            ],
+                            ]
                         ] ?>
                         <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
                             <?php foreach($items as $item) {?>
