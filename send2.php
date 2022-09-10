@@ -7,6 +7,7 @@ $text = $_POST['text'];
 try {
     $pdo = new PDO("mysql:host=tasks.test;dbname=text_list;", "root", "");
     $pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+
     $sql = "SELECT * FROM text_list.text WHERE text=:text";
     $statement = $pdo->prepare($sql);
     $statement->execute(['text' => $text]);

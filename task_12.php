@@ -1,6 +1,5 @@
 <?php
-session_start();
-//var_dump($_SESSION);
+session_start()
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,26 +37,19 @@ session_start();
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <?php if(isset($_SESSION['text'])) :?>
-                                        <div class="alert alert-info fade show" role="alert">
+                                    <?php if($_SESSION['text']) :?>
+                                    <div class="alert alert-info fade show" role="alert">
 
-                                            <?php echo $_SESSION['text'] ?>
+                                        <?php echo $_SESSION['text'] ?>
 
-                                        </div>
-                                    <?php unset($_SESSION['text']); ?>
+                                    </div>
                                     <?php endif; ?>
-                                    <?php if(isset($_SESSION['user'])) :?>
-                                        <h2>Авторизован</h2>
-                                    <?php endif; ?>
-                                    <form action="task_14_handler.php" method="post">
+                                    <form action="task_12_handler.php" method="post">
                                         <div class="form-group">
-                                        	<label class="form-label" for="simpleinput">Email</label>
-                                        <input name="email" type="text" id="simpleinput" class="form-control">
+                                        	<label class="form-label" for="simpleinput">Text</label>
+                                            <input name="text" type="text" id="simpleinput" class="form-control">
                                         </div>
-
-                                        <label class="form-label" for="simpleinput">Password</label>
-                                        <input name="password" type="password" id="simpleinput" class="form-control">
-                                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                                        <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
                             </div>
@@ -78,4 +70,3 @@ session_start();
         </script>
     </body>
 </html>
-<?php session_destroy(); ?>

@@ -1,6 +1,5 @@
 <?php
 session_start();
-//var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +26,7 @@ session_start();
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
                         <h2>
-                            Задание
+                            Задание 13
                         </h2>
                         <div class="panel-toolbar">
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
@@ -38,26 +37,11 @@ session_start();
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <?php if(isset($_SESSION['text'])) :?>
-                                        <div class="alert alert-info fade show" role="alert">
-
-                                            <?php echo $_SESSION['text'] ?>
-
-                                        </div>
-                                    <?php unset($_SESSION['text']); ?>
-                                    <?php endif; ?>
-                                    <?php if(isset($_SESSION['user'])) :?>
-                                        <h2>Авторизован</h2>
-                                    <?php endif; ?>
-                                    <form action="task_14_handler.php" method="post">
-                                        <div class="form-group">
-                                        	<label class="form-label" for="simpleinput">Email</label>
-                                        <input name="email" type="text" id="simpleinput" class="form-control">
-                                        </div>
-
-                                        <label class="form-label" for="simpleinput">Password</label>
-                                        <input name="password" type="password" id="simpleinput" class="form-control">
-                                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                                    <div class="alert alert-info fade show" role="alert">
+                                        Кнопка была нажата: <b><?php echo $_SESSION['count']; ?></b> раз
+                                    </div>
+                                    <form action="task_13_handler.php" method="post">
+                                        <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
                             </div>
@@ -78,4 +62,3 @@ session_start();
         </script>
     </body>
 </html>
-<?php session_destroy(); ?>

@@ -12,4 +12,4 @@ $sql = "INSERT INTO text_list.text (text) VALUES (:text)";
 $statement = $pdo->prepare($sql);
 $statement->execute(['text' => $text]);
 
-header("Location: /index.php");
+header("Location: /indx.php");

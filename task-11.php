@@ -1,6 +1,5 @@
 <?php
 session_start();
-//var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +10,7 @@ session_start();
         </title>
         <meta name="description" content="Chartist.html">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
         <link id="vendorsbundle" rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
         <link id="appbundle" rel="stylesheet" media="screen, print" href="css/app.bundle.css">
@@ -27,7 +27,7 @@ session_start();
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
                         <h2>
-                            Задание
+                            Задание 11
                         </h2>
                         <div class="panel-toolbar">
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
@@ -38,26 +38,22 @@ session_start();
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <?php if(isset($_SESSION['text'])) :?>
-                                        <div class="alert alert-info fade show" role="alert">
-
-                                            <?php echo $_SESSION['text'] ?>
-
-                                        </div>
-                                    <?php unset($_SESSION['text']); ?>
+                                    <?php if(isset($_SESSION['danger'])) :?>
+                                    <div class="alert alert-danger fade show" role="alert">
+                                        <?php echo $_SESSION['danger'];
+                                        unset($_SESSION['danger']);
+                                        ?>
+                                    </div>
                                     <?php endif; ?>
-                                    <?php if(isset($_SESSION['user'])) :?>
-                                        <h2>Авторизован</h2>
-                                    <?php endif; ?>
-                                    <form action="task_14_handler.php" method="post">
+                                    <form action="task_11_handler.php" method="post">
                                         <div class="form-group">
                                         	<label class="form-label" for="simpleinput">Email</label>
-                                        <input name="email" type="text" id="simpleinput" class="form-control">
+                                            <input name="email" type="email" id="simpleinput" class="form-control">
                                         </div>
 
-                                        <label class="form-label" for="simpleinput">Password</label>
-                                        <input name="password" type="password" id="simpleinput" class="form-control">
-                                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                                            <label class="form-label" for="simpleinput">Password</label>
+                                            <input name="password" type="password" id="simpleinput" class="form-control" placeholder="">
+                                        <button class="btn btn-success mt-3">Submit</button>
                                     </form>
                                 </div>
                             </div>
@@ -78,4 +74,3 @@ session_start();
         </script>
     </body>
 </html>
-<?php session_destroy(); ?>
